@@ -30,6 +30,8 @@ public class Main extends Application {
 			primaryStage.show();
 			//root.setStyle(gradient);
 			primaryStage.setTitle("name of the game");
+			primaryStage.setResizable(false);
+
 			
 			
 	//setting the gradient for the background 
