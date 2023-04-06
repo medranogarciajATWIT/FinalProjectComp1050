@@ -1,9 +1,13 @@
 package application;
 
-public class Number_Crunching {
+import java.time.Clock;
 
-	public Number_Crunching() {
-		// TODO Auto-generated constructor stub
-	}
+public class Number_Crunching {
+	
+		Clock clock = Clock.systemDefaultZone();
+		
+		public static int totalClicks = 0;
+		
+		public int Clicker1 = 0;
 
 }

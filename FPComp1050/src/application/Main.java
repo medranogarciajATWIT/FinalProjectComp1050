@@ -95,5 +95,7 @@ public class Main extends Application {
 			b4.setEndY(600);
 			b4.setStrokeWidth(10);
 			root.getChildren().add(b4);
+			
+			
 	}
 }
