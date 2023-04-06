@@ -2,10 +2,11 @@ package application;
 	
 import java.time.Clock;
 
+import javafx.animation.KeyFrame;
 import javafx.application.Application;
-
-
+import javafx.animation.Timeline;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import javafx.scene.Scene;
 import javafx.scene.Group; 
 import javafx.scene.layout.BorderPane;
@@ -125,6 +126,27 @@ public class Main extends Application {
 			count.setTranslateY(225);
 			count.setMaxSize(100, 100);
 			root.getChildren().add(count);
+			
+			Label feedCat = new Label("Feed Stir Fry! :)");
+			feedCat.setTranslateX(200);
+			feedCat.setTranslateY(50);
+			feedCat.setMaxSize(100, 100);
+			root.getChildren().add(feedCat);
+			
+			Label averageClicks = new Label("Average Clicks: ");
+			averageClicks.setTranslateX(200);
+			averageClicks.setTranslateY(250);
+			averageClicks.setMaxSize(150, 100);
+			root.getChildren().add(averageClicks);
+			
+			Timeline timeline = new Timeline();
+					timeline.getKeyFrames().add(new KeyFrame(Duration.seconds(1), event -> {
+						double average = (double) totalClicks / timeline.getCurrentTime().toSeconds();
+						averageClicks.setText(String.format("Average Clicks: %.2f", average));
+					}));
+
+			timeline.setCycleCount(timeline.INDEFINITE);
+			timeline.play();
 			
 			//grid for the counter / clicks per second 
 			
