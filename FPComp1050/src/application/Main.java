@@ -1,17 +1,36 @@
 package application;
 	
+import java.time.Clock;
+
 import javafx.application.Application;
+
+
 import javafx.stage.Stage;
 import javafx.scene.Scene;
+import javafx.scene.Group; 
 import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Line;
-import javafx.scene.shape.StrokeLineCap;
-import javafx.scene.paint.CycleMethod;
-import javafx.scene.paint.LinearGradient;
-import javafx.scene.paint.Stop;
 import javafx.scene.paint.Color;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label; 
+import javafx.scene.layout.GridPane; 
+
 
 public class Main extends Application {
+	//non graphical elements
+	Clock clock = Clock.systemDefaultZone();
+	
+	public int totalClicks = 0;
+	
+	public int Clicker1 = 0;
+
+	public int Clicker2 = 0;
+	
+	public int Clicker3 = 0;
+	
+	public int Clicker4 = 0;
+	
+	public int Clicker5 = 0;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -23,24 +42,17 @@ public class Main extends Application {
 	public void start(Stage primaryStage) {
 		
 		//main stage 
-			BorderPane root = new BorderPane();
-			Scene scene1 = new Scene(root,800,600);
-			scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
+			Group root = new Group();
+			Scene scene1 = new Scene(root,800,600, Color.BEIGE);
+			//scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene1);
 			primaryStage.show();
 			//root.setStyle(gradient);
 			primaryStage.setTitle("name of the game");
+			primaryStage.setResizable(false);
+
 			
-			
-	//setting the gradient for the background 
-			
-			 Stop[] stops = new Stop[] {
-			         new Stop(0, Color.DARKSLATEBLUE),
-			         new Stop(1, Color.DARKRED)
-			      };
-			 
-			 LinearGradient gradient =
-				      new LinearGradient(0, 0, 1, 0, true, CycleMethod.NO_CYCLE, stops);
+
 			
 			
 //sections of the game layout 
@@ -51,6 +63,8 @@ public class Main extends Application {
 			s1.setEndX(500); 
 			s1.setEndY(600);
 			s1.setStrokeWidth(10);
+			
+			
 			
 			final Line s1A = new Line();
 			s1A.setStartX(0);
@@ -96,6 +110,23 @@ public class Main extends Application {
 			b4.setStrokeWidth(10);
 			root.getChildren().add(b4);
 			
+
+			//button for the main clicker 
 			
+			final Button btn = new Button();
+			btn.setText("Click Me!");
+			btn.setTranslateX(200);
+		    btn.setTranslateY(200);
+		    btn.setMaxSize(100, 100);
+			root.getChildren().add(btn);
+			
+			//grid for the counter / clicks per second 
+			
+			GridPane grid = new GridPane();
+			grid.setGridLinesVisible(true);
+			
+			
+	
+
 	}
 }
