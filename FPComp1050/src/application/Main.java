@@ -120,13 +120,23 @@ public class Main extends Application {
 		    btn.setMaxSize(100, 100);
 			root.getChildren().add(btn);
 			
+			Label count = new Label("Count: " + totalClicks);
+			count.setTranslateX(200);
+			count.setTranslateY(225);
+			count.setMaxSize(100, 100);
+			root.getChildren().add(count);
+			
 			//grid for the counter / clicks per second 
 			
 			GridPane grid = new GridPane();
 			grid.setGridLinesVisible(true);
 			
-			
+			btn.setOnAction(e -> {
+				totalClicks++;
+				count.setText("Count: " + totalClicks);
+			});
 	
 
 	}
+
 }
