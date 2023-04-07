@@ -194,19 +194,12 @@ public class Main extends Application {
 		    btn.setMaxSize(100, 100);
 			root.getChildren().add(btn);
 			
-			Image stirFry = new Image("/Saved Pictures\\stir fry.PNG\"");
-			ImageView image = new ImageView(stirFry);
-			image.setFitHeight(80);
-			image.setPreserveRatio(true);
-			
 			final Button x1 = new Button();
 			x1.setText("x1");
 			x1.setTranslateX(525);
 			x1.setTranslateY(8);
 			btn.setMaxSize(100, 100);
 			root.getChildren().add(x1);
-			
-			btn.setGraphic(image);
 			
 			final Button x5 = new Button();
 			x5.setText("x5");
