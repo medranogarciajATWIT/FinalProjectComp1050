@@ -222,7 +222,8 @@ public class Main extends Application {
 			cpsIncrease.setMaxSize(100, 100);
 			root.getChildren().add(cpsIncrease);
 			
-			Label count = new Label("Count: " + totalClicks);
+			Label count = new Label(String.format("Count: %d", totalClicks));
+			
 			count.setTranslateX(200);
 			count.setTranslateY(225);
 			count.setMaxSize(100, 100);
@@ -301,11 +302,12 @@ public class Main extends Application {
 
 			cpsIncrease.setOnAction(e -> {
 				if (totalClicks >= cpsCost * purchaseAmount) {
-					totalClicks = totalClicks - cpsCost;
+					totalClicks = totalClicks - (cpsCost * purchaseAmount);
 					cpsAmount =+ purchaseAmount;
 					cpsCost = cpsCost * 2;
 					cpsTotal.setText(String.format("Amount: %d", cpsAmount));
 					cpsPrice.setText(String.format("Price: %d", cpsCost));
+					count.setText("Count: " + totalClicks);
 				}
 			});
 			
