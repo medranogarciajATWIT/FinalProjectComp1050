@@ -1,5 +1,6 @@
 package application;
 
+import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.application.Application;
 import javafx.animation.Timeline;
@@ -17,6 +18,8 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.text.Text; 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 
 public class Main extends Application {
@@ -29,19 +32,41 @@ public class Main extends Application {
 	
 	public int cpsAmount = 1;
 	
-	public int Clicker1 = 0;
-
-	public int Clicker2 = 0;
+	public int Clicker1Amount = 0;
 	
-	public int Clicker3 = 0;
+	public int Clicker1Cost = 100;
 	
-	public int Clicker4 = 0;
+	public int Clicker2Amount = 0;
 	
-	public int Clicker5 = 0;
+	public int Clicker2Cost = 2500;
+		
+	public int Clicker3Amount = 0;
+	
+	public int Clicker3Cost = 10000;
+		
+	public int Clicker4Amount = 0;
+	
+	public int Clicker4Cost = 50000;
+		
+	public int Clicker5Amount = 0;
+	
+	public int Clicker5Cost = 275000;
+		
+	public int Clicker6Amount = 0;
+	
+	public int Clicker6Cost = 1000000;
+		
+	public int Clicker7Amount = 0;
+	
+	public int Clicker7Cost = 25000000;
+	
+	public int Prestiege = 1;
 	
 	public int cpsCost = 10;
 	
 	public double clicksPerSecond = 0;
+	
+	public Timeline autoClickerTimer;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -222,6 +247,55 @@ public class Main extends Application {
 			cpsIncrease.setMaxSize(100, 100);
 			root.getChildren().add(cpsIncrease);
 			
+			final Button autoClicker1 = new Button();
+			autoClicker1.setText("Auto Feeder 1");
+			autoClicker1.setTranslateX(525);
+			autoClicker1.setTranslateY(135);
+			autoClicker1.setMaxSize(100, 100);
+			root.getChildren().add(autoClicker1);
+			
+			final Button autoClicker2 = new Button();
+			autoClicker2.setText("Auto Feeder 2");
+			autoClicker2.setTranslateX(525);
+			autoClicker2.setTranslateY(205);
+			autoClicker2.setMaxSize(100, 100);
+			root.getChildren().add(autoClicker2);
+			
+			final Button autoClicker3 = new Button();
+			autoClicker3.setText("Auto Feeder 3");
+			autoClicker3.setTranslateX(525);
+			autoClicker3.setTranslateY(275);
+			autoClicker3.setMaxSize(100, 100);
+			root.getChildren().add(autoClicker3);
+			
+			final Button autoClicker4 = new Button();
+			autoClicker4.setText("Robo Litter Box");
+			autoClicker4.setTranslateX(525);
+			autoClicker4.setTranslateY(345);
+			autoClicker4.setMaxSize(100, 100);
+			root.getChildren().add(autoClicker4);
+			
+			final Button autoClicker5 = new Button();
+			autoClicker5.setText("Luxury Hairbrush");
+			autoClicker5.setTranslateX(525);
+			autoClicker5.setTranslateY(420);
+			autoClicker5.setMaxSize(150, 100);
+			root.getChildren().add(autoClicker5);
+			
+			final Button autoClicker6 = new Button();
+			autoClicker6.setText("Quality Food");
+			autoClicker6.setTranslateX(525);
+			autoClicker6.setTranslateY(490);
+			autoClicker6.setMaxSize(100, 100);
+			root.getChildren().add(autoClicker6);
+			
+			final Button autoClicker7 = new Button();
+			autoClicker7.setText("Scratching Post");
+			autoClicker7.setTranslateX(525);
+			autoClicker7.setTranslateY(560);
+			autoClicker7.setMaxSize(125, 100);
+			root.getChildren().add(autoClicker7);
+			
 			Label count = new Label(String.format("Count: %d", totalClicks));
 			
 			count.setTranslateX(200);
@@ -259,26 +333,116 @@ public class Main extends Application {
 			cpsPrice.setMaxSize(100, 100);
 			root.getChildren().add(cpsPrice);
 			
+			Label clicker1Total = new Label(String.format("Amount: %d", Clicker1Amount));
+			clicker1Total.setTranslateX(625);
+			clicker1Total.setTranslateY(140);
+			clicker1Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker1Total);
+			
+			Label clicker1Price = new Label(String.format("Price: %d", Clicker1Cost));
+			clicker1Price.setTranslateX(700);
+			clicker1Price.setTranslateY(140);
+			clicker1Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker1Price);
+			
+			Label clicker2Total = new Label(String.format("Amount: %d", Clicker2Amount));
+			clicker2Total.setTranslateX(625);
+			clicker2Total.setTranslateY(210);
+			clicker2Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker2Total);
+			
+			Label clicker2Price = new Label(String.format("Price: %d", Clicker2Cost));
+			clicker2Price.setTranslateX(700);
+			clicker2Price.setTranslateY(210);
+			clicker2Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker2Price);
+			
+			Label clicker3Total = new Label(String.format("Amount: %d", Clicker3Amount));
+			clicker3Total.setTranslateX(625);
+			clicker3Total.setTranslateY(280);
+			clicker3Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker3Total);
+			
+			Label clicker3Price = new Label(String.format("Price: %d", Clicker3Cost));
+			clicker3Price.setTranslateX(700);
+			clicker3Price.setTranslateY(280);
+			clicker3Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker3Price);
+			
+			Label clicker4Total = new Label(String.format("Amount: %d", Clicker4Amount));
+			clicker4Total.setTranslateX(625);
+			clicker4Total.setTranslateY(350);
+			clicker4Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker4Total);
+			
+			Label clicker4Price = new Label(String.format("Price: %d", Clicker4Cost));
+			clicker4Price.setTranslateX(700);
+			clicker4Price.setTranslateY(350);
+			clicker4Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker4Price);
+			
+			Label clicker5Total = new Label(String.format("Amount: %d", Clicker5Amount));
+			clicker5Total.setTranslateX(635);
+			clicker5Total.setTranslateY(425);
+			clicker5Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker5Total);
+			
+			Label clicker5Price = new Label(String.format("Price: %d", Clicker5Cost));
+			clicker5Price.setTranslateX(700);
+			clicker5Price.setTranslateY(425);
+			clicker5Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker5Price);
+			
+			Label clicker6Total = new Label(String.format("Amount: %d", Clicker6Amount));
+			clicker6Total.setTranslateX(625);
+			clicker6Total.setTranslateY(495);
+			clicker6Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker6Total);
+			
+			Label clicker6Price = new Label(String.format("Price: %d", Clicker6Cost));
+			clicker6Price.setTranslateX(700);
+			clicker6Price.setTranslateY(495);
+			clicker6Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker6Price);
+			
+			Label clicker7Total = new Label(String.format("Amount: %d", Clicker7Amount));
+			clicker7Total.setTranslateX(625);
+			clicker7Total.setTranslateY(565);
+			clicker7Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker7Total);
+			
+			Label clicker7Price = new Label(String.format("Price: %d", Clicker7Cost));
+			clicker7Price.setTranslateX(700);
+			clicker7Price.setTranslateY(565);
+			clicker7Total.setMaxSize(100, 100);
+			root.getChildren().add(clicker7Price);
+			
 			//grid for the counter / clicks per second 
 			
 			GridPane grid = new GridPane();
 			grid.setGridLinesVisible(true);
 			
-
+			//Clicker button functionality + total/average count
 			btn.setOnAction(e -> {
 				totalClicks += cpsAmount;
 				count.setText("Count: " + totalClicks);
 				if (startTime == 0) {
 					startTime = System.currentTimeMillis();
 				}
-				else {
-					long currentTime = System.currentTimeMillis();
-					double elapsedTimeInSeconds = (currentTime - startTime) / 1000;
-					clicksPerSecond = totalClicks / elapsedTimeInSeconds;
-					averageClicks.setText(String.format("Average Clicks: %.2f", clicksPerSecond));
-				}
 			});
-	
+			//Updates average clicks every second
+			Timeline averageClicksTimer = new Timeline(new KeyFrame(Duration.seconds(1), event -> {
+				if(totalClicks > 0) {
+						long currentTime = System.currentTimeMillis();
+						double elapsedTimeInSeconds = (currentTime - startTime) / 1000;
+						clicksPerSecond = totalClicks / elapsedTimeInSeconds;
+				}
+				averageClicks.setText(String.format("Average Clicks: %.2f", clicksPerSecond));
+			}));
+			averageClicksTimer.setCycleCount(Animation.INDEFINITE);
+			averageClicksTimer.play();
+			
+			//Options for buying in bulk
 			x1.setOnAction(e -> {
 				if (purchaseAmount != 1) {
 					purchaseAmount = 1;
@@ -299,15 +463,40 @@ public class Main extends Application {
 					purchaseAmountIndicator.setText(String.format("Buy: %d", purchaseAmount));
 				}
 			});
-
+			//Increase number of clicks per second
 			cpsIncrease.setOnAction(e -> {
 				if (totalClicks >= cpsCost * purchaseAmount) {
 					totalClicks = totalClicks - (cpsCost * purchaseAmount);
 					cpsAmount =+ purchaseAmount;
-					cpsCost = cpsCost * 2;
+					cpsCost = purchaseAmount * (cpsCost * 2);
 					cpsTotal.setText(String.format("Amount: %d", cpsAmount));
 					cpsPrice.setText(String.format("Price: %d", cpsCost));
 					count.setText("Count: " + totalClicks);
+				}
+			});
+			//Structure for all the auto clickers
+			autoClicker1.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker1Cost) {
+						totalClicks -= Clicker1Cost;
+						count.setText("Count: " + totalClicks);
+						Clicker1Amount += purchaseAmount;
+						clicker1Total.setText("Amount: " + Clicker1Amount);
+						Clicker1Cost *= 2;
+						clicker1Price.setText("Cost: " + Clicker1Cost);
+					}
+					if(autoClickerTimer == null) {
+						autoClickerTimer = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker1Amount;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer.play();
+					}
 				}
 			});
 			
