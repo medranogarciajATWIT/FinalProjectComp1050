@@ -20,13 +20,15 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
+import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 
 
 public class Main extends Application {
 	//non graphical elements
 	public long startTime = 0;
 	
-	public int totalClicks = 25000000;
+	public int totalClicks = 0;
 	
 	public int purchaseAmount = 1;
 	
@@ -222,13 +224,19 @@ public class Main extends Application {
 			b12.setStrokeWidth(10);
 			root.getChildren().add(b12);
 			
+			//image for the main button
+			//Image catImage = new Image("cat.png");
+			//ImageView catImageView = new ImageView(catImage);
+			//root.getChildren().add(catImageView);
 			
 			//button for the main clicker 
-			final Button btn = new Button();
+			final Button btn = new Button();  //change for cat picture 
 			btn.setText("Click Me!");
 			btn.setTranslateX(200);
 		    btn.setTranslateY(200);
 		    btn.setMaxSize(100, 100);
+		    //btn.setGraphic(catImageView);
+		    
 			root.getChildren().add(btn);
 			
 			final Button x1 = new Button();
