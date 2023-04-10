@@ -4,20 +4,22 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.application.Application;
 import javafx.animation.Timeline;
+import javafx.geometry.Insets;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.Scene;
 import javafx.scene.Group; 
+import javafx.scene.layout.BorderPane;
 import javafx.scene.shape.Line;
 import javafx.scene.paint.Color;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label; 
+import javafx.scene.layout.GridPane; 
+import javafx.scene.text.Text; 
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
-import javafx.scene.text.Font;
-import javafx.scene.text.FontWeight;
 
 
 public class Main extends Application {
@@ -89,7 +91,7 @@ public class Main extends Application {
 		
 		//main stage 
 			Group root = new Group();
-			Scene scene1 = new Scene(root,800,600, Color.BURLYWOOD);
+			Scene scene1 = new Scene(root,800,600, Color.BEIGE);
 			//scene1.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
 			primaryStage.setScene(scene1);
 			primaryStage.show();
@@ -226,6 +228,22 @@ public class Main extends Application {
 			catImageView.setFitWidth(200);
 			catImageView.setFitHeight(200);
 			
+			Image cat2 = new Image("cat lmao.png");
+			ImageView catImageView2 = new ImageView(cat2);
+			catImageView2.setFitWidth(100);
+			catImageView2.setFitHeight(100);
+			catImageView2.setTranslateX(10);
+			catImageView2.setTranslateY(450);
+			root.getChildren().add(catImageView2);
+			
+			Image cat3 = new Image("funny cat.png");
+			ImageView catImageView3 = new ImageView(cat3);
+			catImageView3.setFitHeight(100);
+			catImageView3.setFitWidth(100);
+			catImageView3.setTranslateX(160);
+			catImageView3.setTranslateY(450);
+			root.getChildren().add(catImageView3);
+			
 			
 			//button for the main clicker 
 			final Button btn = new Button();  //change for cat picture 
@@ -235,7 +253,6 @@ public class Main extends Application {
 		    btn.setPrefWidth(200);
 	        btn.setPrefHeight(200);
 		    btn.setGraphic(catImageView);
-		    
 			root.getChildren().add(btn);
 			
 			final Button x1 = new Button();
@@ -315,152 +332,135 @@ public class Main extends Application {
 			autoClicker7.setMaxSize(125, 100);
 			root.getChildren().add(autoClicker7);
 			
-			Label count = new Label(String.format("%d Treats", totalClicks));
-			count.setFont(Font.font("Arial", FontWeight.BOLD, 24));
-			
-			count.setTranslateX(185);
-			count.setTranslateY(320);
-			count.setMaxSize(200, 200);
+			Label count = new Label(String.format("Count: %d", totalClicks));
+			count.setTranslateX(200);
+			count.setTranslateY(300);
+			count.setMaxSize(100, 100);
 			root.getChildren().add(count);
 			
 			Label feedCat = new Label("Feed Stir Fry! :)");
-			feedCat.setFont(Font.font("Arial", FontWeight.BOLD, 24));
-			feedCat.setTranslateX(150);
+			feedCat.setTranslateX(200);
 			feedCat.setTranslateY(50);
-			feedCat.setMaxSize(200, 200);
+			feedCat.setMaxSize(100, 100);
 			root.getChildren().add(feedCat);
 			
-			Label averageClicks = new Label(String.format("Per Second: %.2f", clicksPerSecond));
-			averageClicks.setFont(Font.font("Arial", FontWeight.BOLD, 24));
-			averageClicks.setTranslateX(150);
-			averageClicks.setTranslateY(350);
-			averageClicks.setMaxSize(300, 200);
+			Label averageClicks = new Label(String.format("Average Clicks: %.2f", clicksPerSecond));
+			averageClicks.setTranslateX(200);
+			averageClicks.setTranslateY(325);
+			averageClicks.setMaxSize(150, 100);
 			root.getChildren().add(averageClicks);
 			
 			Label purchaseAmountIndicator = new Label(String.format("Buy: %d", purchaseAmount));
-			purchaseAmountIndicator.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			purchaseAmountIndicator.setTranslateX(700);
 			purchaseAmountIndicator.setTranslateY(10);
 			purchaseAmountIndicator.setMaxSize(100, 100);
 			root.getChildren().add(purchaseAmountIndicator);
 			
 			Label cpsTotal = new Label(String.format("Amount: %d", cpsAmount));
-			cpsTotal.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			cpsTotal.setTranslateX(625);
 			cpsTotal.setTranslateY(70);
 			cpsTotal.setMaxSize(100, 100);
 			root.getChildren().add(cpsTotal);
 			
 			Label cpsPrice = new Label(String.format("Price: %d", cpsCost));
-			cpsPrice.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			cpsPrice.setTranslateX(700);
 			cpsPrice.setTranslateY(70);
 			cpsPrice.setMaxSize(100, 100);
 			root.getChildren().add(cpsPrice);
 			
 			Label clicker1Total = new Label(String.format("Amount: %d", Clicker1Amount));
-			clicker1Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker1Total.setTranslateX(625);
 			clicker1Total.setTranslateY(140);
 			clicker1Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker1Total);
 			
 			Label clicker1Price = new Label(String.format("Price: %d", Clicker1Cost));
-			clicker1Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker1Price.setTranslateX(700);
 			clicker1Price.setTranslateY(140);
 			clicker1Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker1Price);
 			
 			Label clicker2Total = new Label(String.format("Amount: %d", Clicker2Amount));
-			clicker2Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker2Total.setTranslateX(625);
 			clicker2Total.setTranslateY(210);
 			clicker2Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker2Total);
 			
 			Label clicker2Price = new Label(String.format("Price: %d", Clicker2Cost));
-			clicker2Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker2Price.setTranslateX(700);
 			clicker2Price.setTranslateY(210);
 			clicker2Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker2Price);
 			
 			Label clicker3Total = new Label(String.format("Amount: %d", Clicker3Amount));
-			clicker3Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker3Total.setTranslateX(625);
 			clicker3Total.setTranslateY(280);
 			clicker3Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker3Total);
 			
 			Label clicker3Price = new Label(String.format("Price: %d", Clicker3Cost));
-			clicker3Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker3Price.setTranslateX(700);
 			clicker3Price.setTranslateY(280);
 			clicker3Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker3Price);
 			
 			Label clicker4Total = new Label(String.format("Amount: %d", Clicker4Amount));
-			clicker4Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker4Total.setTranslateX(625);
 			clicker4Total.setTranslateY(350);
 			clicker4Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker4Total);
 			
 			Label clicker4Price = new Label(String.format("Price: %d", Clicker4Cost));
-			clicker4Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker4Price.setTranslateX(700);
 			clicker4Price.setTranslateY(350);
 			clicker4Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker4Price);
 			
 			Label clicker5Total = new Label(String.format("Amount: %d", Clicker5Amount));
-			clicker5Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker5Total.setTranslateX(635);
 			clicker5Total.setTranslateY(425);
 			clicker5Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker5Total);
 			
 			Label clicker5Price = new Label(String.format("Price: %d", Clicker5Cost));
-			clicker5Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker5Price.setTranslateX(700);
 			clicker5Price.setTranslateY(425);
 			clicker5Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker5Price);
 			
 			Label clicker6Total = new Label(String.format("Amount: %d", Clicker6Amount));
-			clicker6Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker6Total.setTranslateX(625);
 			clicker6Total.setTranslateY(495);
 			clicker6Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker6Total);
 			
 			Label clicker6Price = new Label(String.format("Price: %d", Clicker6Cost));
-			clicker6Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker6Price.setTranslateX(700);
 			clicker6Price.setTranslateY(495);
 			clicker6Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker6Price);
 			
 			Label clicker7Total = new Label(String.format("Amount: %d", Clicker7Amount));
-			clicker7Total.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker7Total.setTranslateX(625);
 			clicker7Total.setTranslateY(565);
 			clicker7Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker7Total);
 			
 			Label clicker7Price = new Label(String.format("Price: %d", Clicker7Cost));
-			clicker7Price.setFont(Font.font("Arial", FontWeight.BOLD, 12));
 			clicker7Price.setTranslateX(700);
 			clicker7Price.setTranslateY(565);
 			clicker7Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker7Price);
 			
+			//grid for the counter / clicks per second 
+			
+			GridPane grid = new GridPane();
+			grid.setGridLinesVisible(true);
 			
 			//Clicker button functionality + total/average count
 			btn.setOnAction(e -> {
 				totalClicks += cpsAmount;
-				count.setText(totalClicks + " Treats");
+				count.setText("Count: " + totalClicks);
 				if (startTime == 0) {
 					startTime = System.currentTimeMillis();
 				}
@@ -472,7 +472,7 @@ public class Main extends Application {
 						double elapsedTimeInSeconds = (currentTime - startTime) / 1000;
 						clicksPerSecond = totalClicks / elapsedTimeInSeconds;
 				}
-				averageClicks.setText(String.format("Per Second: %.2f", clicksPerSecond));
+				averageClicks.setText(String.format("Average Clicks: %.2f", clicksPerSecond));
 			}));
 			averageClicksTimer.setCycleCount(Animation.INDEFINITE);
 			averageClicksTimer.play();
