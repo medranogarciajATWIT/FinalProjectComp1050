@@ -26,7 +26,7 @@ public class Main extends Application {
 	//non graphical elements
 	public long startTime = 0;
 	
-	public int totalClicks = 0;
+	public int totalClicks = 25000000;
 	
 	public int purchaseAmount = 1;
 	
@@ -66,7 +66,19 @@ public class Main extends Application {
 	
 	public double clicksPerSecond = 0;
 	
-	public Timeline autoClickerTimer;
+	public Timeline autoClickerTimer1;
+	
+	public Timeline autoClickerTimer2;
+	
+	public Timeline autoClickerTimer3;
+	
+	public Timeline autoClickerTimer4;
+	
+	public Timeline autoClickerTimer5;
+	
+	public Timeline autoClickerTimer6;
+	
+	public Timeline autoClickerTimer7;
 	
 	public static void main(String[] args) {
 		launch(args);
@@ -479,24 +491,180 @@ public class Main extends Application {
 				@Override
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker1Cost) {
-						totalClicks -= Clicker1Cost;
+						totalClicks -= Clicker1Cost * purchaseAmount;
 						count.setText("Count: " + totalClicks);
 						Clicker1Amount += purchaseAmount;
 						clicker1Total.setText("Amount: " + Clicker1Amount);
-						Clicker1Cost *= 2;
+						Clicker1Cost = purchaseAmount * (Clicker1Cost * 2);
 						clicker1Price.setText("Cost: " + Clicker1Cost);
 					}
-					if(autoClickerTimer == null) {
-						autoClickerTimer = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+					if(autoClickerTimer1 == null) {
+						autoClickerTimer1 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker1Amount;
 								count.setText("Count: " + totalClicks);
 							}
 						}));
-						autoClickerTimer.setCycleCount(Animation.INDEFINITE);
-						autoClickerTimer.play();
+						autoClickerTimer1.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer1.play();
 					}
+				}
+			});
+			
+			autoClicker2.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker2Cost) {
+						totalClicks -= Clicker2Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker2Amount += purchaseAmount;
+						clicker2Total.setText("Amount: " + Clicker2Amount);
+						Clicker2Cost = purchaseAmount * (2 * Clicker2Cost);
+						clicker2Price.setText("Cost: " + Clicker2Cost);
+					}
+					if(autoClickerTimer2 == null) {
+						autoClickerTimer2 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker2Amount * 10;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer2.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer2.play();
+					}
+					
+				}
+			});
+			
+			autoClicker3.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker3Cost) {
+						totalClicks -= Clicker3Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker3Amount += purchaseAmount;
+						clicker3Total.setText("Amount: " + Clicker3Amount);
+						Clicker3Cost = purchaseAmount * (2 * Clicker3Cost);
+						clicker3Price.setText("Cost: " + Clicker3Cost);
+					}
+					if(autoClickerTimer3 == null) {
+						autoClickerTimer3 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker3Amount * 25;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer3.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer3.play();
+					}
+					
+				}
+			});
+			
+			autoClicker4.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker4Cost) {
+						totalClicks -= Clicker4Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker4Amount += purchaseAmount;
+						clicker4Total.setText("Amount: " + Clicker4Amount);
+						Clicker4Cost = purchaseAmount * (2 * Clicker4Cost);
+						clicker4Price.setText("Cost: " + Clicker4Cost);
+					}
+					if(autoClickerTimer4 == null) {
+						autoClickerTimer4 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker4Amount * 100;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer4.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer4.play();
+					}
+					
+				}
+			});
+			
+			autoClicker5.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker5Cost) {
+						totalClicks -= Clicker5Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker5Amount += purchaseAmount;
+						clicker5Total.setText("Amount: " + Clicker5Amount);
+						Clicker5Cost = purchaseAmount * (2 * Clicker5Cost);
+						clicker5Price.setText("Cost: " + Clicker5Cost);
+					}
+					if(autoClickerTimer5 == null) {
+						autoClickerTimer5 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker5Amount * 250;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer5.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer5.play();
+					}
+					
+				}
+			});
+			
+			autoClicker6.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker6Cost) {
+						totalClicks -= Clicker6Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker6Amount += purchaseAmount;
+						clicker6Total.setText("Amount: " + Clicker6Amount);
+						Clicker6Cost = purchaseAmount * (2 * Clicker6Cost);
+						clicker6Price.setText("Cost: " + Clicker6Cost);
+					}
+					if(autoClickerTimer6 == null) {
+						autoClickerTimer6 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker6Amount * 500;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer6.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer6.play();
+					}
+					
+				}
+			});
+			
+			autoClicker7.setOnAction(new EventHandler<ActionEvent>() {
+				@Override
+				public void handle(ActionEvent event) {
+					if(totalClicks >= Clicker7Cost) {
+						totalClicks -= Clicker7Cost * purchaseAmount;
+						count.setText("Count: " + totalClicks);
+						Clicker7Amount += purchaseAmount;
+						clicker7Total.setText("Amount: " + Clicker7Amount);
+						Clicker7Cost = purchaseAmount * (2 * Clicker7Cost);
+						clicker7Price.setText("Cost: " + Clicker7Cost);
+					}
+					if(autoClickerTimer7 == null) {
+						autoClickerTimer7 = new Timeline(new KeyFrame(Duration.seconds(1), new EventHandler<ActionEvent>() {
+							@Override
+							public void handle(ActionEvent event) {
+								totalClicks += Clicker7Amount * 10000;
+								count.setText("Count: " + totalClicks);
+							}
+						}));
+						autoClickerTimer7.setCycleCount(Animation.INDEFINITE);
+						autoClickerTimer7.play();
+					}
+					
 				}
 			});
 			
