@@ -240,10 +240,25 @@ public class Main extends Application {
 			ImageView catImageView3 = new ImageView(cat3);
 			catImageView3.setFitHeight(100);
 			catImageView3.setFitWidth(100);
-			catImageView3.setTranslateX(160);
+			catImageView3.setTranslateX(140);
 			catImageView3.setTranslateY(450);
 			root.getChildren().add(catImageView3);
 			
+			Image cat4 = new Image("hehe kity.png");
+			ImageView catImageView4 = new ImageView(cat4);
+			catImageView4.setFitHeight(100);
+			catImageView4.setFitWidth(100);
+			catImageView4.setTranslateX(270);
+			catImageView4.setTranslateY(450);
+			root.getChildren().add(catImageView4);
+			
+			Image cat5 = new Image("lol cta.png");
+			ImageView catImageView5 = new ImageView(cat5);
+			catImageView5.setFitHeight(100);
+			catImageView5.setFitWidth(100);
+			catImageView5.setTranslateX(395);
+			catImageView5.setTranslateY(450);
+			root.getChildren().add(catImageView5);
 			
 			//button for the main clicker 
 			final Button btn = new Button();  //change for cat picture 
