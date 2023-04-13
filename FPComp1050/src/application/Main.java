@@ -347,7 +347,7 @@ public class Main extends Application {
 			autoClicker7.setMaxSize(125, 100);
 			root.getChildren().add(autoClicker7);
 			
-			Label count = new Label(String.format("Count: %d", totalClicks));
+			Label count = new Label(String.format("%d treats", totalClicks));
 			count.setTranslateX(200);
 			count.setTranslateY(300);
 			count.setMaxSize(100, 100);
@@ -475,7 +475,7 @@ public class Main extends Application {
 			//Clicker button functionality + total/average count
 			btn.setOnAction(e -> {
 				totalClicks += cpsAmount;
-				count.setText("Count: " + totalClicks);
+				count.setText(totalClicks + " treats");
 				if (startTime == 0) {
 					startTime = System.currentTimeMillis();
 				}
@@ -521,7 +521,7 @@ public class Main extends Application {
 					cpsCost = purchaseAmount * (cpsCost * 2);
 					cpsTotal.setText(String.format("Amount: %d", cpsAmount));
 					cpsPrice.setText(String.format("Price: %d", cpsCost));
-					count.setText("Count: " + totalClicks);
+					count.setText(totalClicks + " treats");
 				}
 			});
 			//Structure for all the auto clickers
@@ -530,7 +530,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker1Cost) {
 						totalClicks -= Clicker1Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker1Amount += purchaseAmount;
 						clicker1Total.setText("Amount: " + Clicker1Amount);
 						Clicker1Cost = purchaseAmount * (Clicker1Cost * 2);
@@ -541,7 +541,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker1Amount;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer1.setCycleCount(Animation.INDEFINITE);
@@ -555,7 +555,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker2Cost) {
 						totalClicks -= Clicker2Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker2Amount += purchaseAmount;
 						clicker2Total.setText("Amount: " + Clicker2Amount);
 						Clicker2Cost = purchaseAmount * (2 * Clicker2Cost);
@@ -566,7 +566,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker2Amount * 10;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer2.setCycleCount(Animation.INDEFINITE);
@@ -581,7 +581,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker3Cost) {
 						totalClicks -= Clicker3Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker3Amount += purchaseAmount;
 						clicker3Total.setText("Amount: " + Clicker3Amount);
 						Clicker3Cost = purchaseAmount * (2 * Clicker3Cost);
@@ -592,7 +592,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker3Amount * 25;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer3.setCycleCount(Animation.INDEFINITE);
@@ -607,7 +607,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker4Cost) {
 						totalClicks -= Clicker4Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker4Amount += purchaseAmount;
 						clicker4Total.setText("Amount: " + Clicker4Amount);
 						Clicker4Cost = purchaseAmount * (2 * Clicker4Cost);
@@ -618,7 +618,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker4Amount * 100;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer4.setCycleCount(Animation.INDEFINITE);
@@ -633,7 +633,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker5Cost) {
 						totalClicks -= Clicker5Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker5Amount += purchaseAmount;
 						clicker5Total.setText("Amount: " + Clicker5Amount);
 						Clicker5Cost = purchaseAmount * (2 * Clicker5Cost);
@@ -644,7 +644,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker5Amount * 250;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer5.setCycleCount(Animation.INDEFINITE);
@@ -659,7 +659,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker6Cost) {
 						totalClicks -= Clicker6Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker6Amount += purchaseAmount;
 						clicker6Total.setText("Amount: " + Clicker6Amount);
 						Clicker6Cost = purchaseAmount * (2 * Clicker6Cost);
@@ -670,7 +670,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker6Amount * 500;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer6.setCycleCount(Animation.INDEFINITE);
@@ -685,7 +685,7 @@ public class Main extends Application {
 				public void handle(ActionEvent event) {
 					if(totalClicks >= Clicker7Cost) {
 						totalClicks -= Clicker7Cost * purchaseAmount;
-						count.setText("Count: " + totalClicks);
+						count.setText(totalClicks + " treats");
 						Clicker7Amount += purchaseAmount;
 						clicker7Total.setText("Amount: " + Clicker7Amount);
 						Clicker7Cost = purchaseAmount * (2 * Clicker7Cost);
@@ -696,7 +696,7 @@ public class Main extends Application {
 							@Override
 							public void handle(ActionEvent event) {
 								totalClicks += Clicker7Amount * 10000;
-								count.setText("Count: " + totalClicks);
+								count.setText(totalClicks + " treats");
 							}
 						}));
 						autoClickerTimer7.setCycleCount(Animation.INDEFINITE);
