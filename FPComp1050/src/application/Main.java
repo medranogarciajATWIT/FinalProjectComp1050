@@ -4,7 +4,7 @@ import javafx.animation.Animation;
 import javafx.animation.KeyFrame;
 import javafx.application.Application;
 import javafx.animation.Timeline;
-
+import javafx.scene.text.Font; 
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import javafx.scene.Scene;
@@ -348,120 +348,140 @@ public class Main extends Application {
 			root.getChildren().add(autoClicker7);
 			
 			Label count = new Label(String.format("%d treats", totalClicks));
+			count.setFont(new Font("Arial", 14));
 			count.setTranslateX(200);
 			count.setTranslateY(300);
 			count.setMaxSize(100, 100);
 			root.getChildren().add(count);
 			
 			Label feedCat = new Label("Feed Stir Fry! :)");
-			feedCat.setTranslateX(200);
+			feedCat.setFont(new Font("Arial", 24));
+			feedCat.setTranslateX(160);
 			feedCat.setTranslateY(50);
-			feedCat.setMaxSize(100, 100);
+			feedCat.setMaxSize(200, 100);
 			root.getChildren().add(feedCat);
 			
 			Label averageClicks = new Label(String.format("Average Clicks: %.2f", clicksPerSecond));
+			averageClicks.setFont(new Font("Arial", 14));
 			averageClicks.setTranslateX(200);
 			averageClicks.setTranslateY(325);
 			averageClicks.setMaxSize(150, 100);
 			root.getChildren().add(averageClicks);
 			
 			Label purchaseAmountIndicator = new Label(String.format("Buy: %d", purchaseAmount));
+			purchaseAmountIndicator.setFont(new Font("Arial", 13));
 			purchaseAmountIndicator.setTranslateX(700);
 			purchaseAmountIndicator.setTranslateY(10);
 			purchaseAmountIndicator.setMaxSize(100, 100);
 			root.getChildren().add(purchaseAmountIndicator);
 			
 			Label cpsTotal = new Label(String.format("Amount: %d", cpsAmount));
+			cpsTotal.setFont(new Font("Arial", 14));
 			cpsTotal.setTranslateX(625);
 			cpsTotal.setTranslateY(70);
 			cpsTotal.setMaxSize(100, 100);
 			root.getChildren().add(cpsTotal);
 			
 			Label cpsPrice = new Label(String.format("Price: %d", cpsCost));
+			cpsPrice.setFont(new Font("Arial", 14));
 			cpsPrice.setTranslateX(700);
 			cpsPrice.setTranslateY(70);
 			cpsPrice.setMaxSize(100, 100);
 			root.getChildren().add(cpsPrice);
 			
 			Label clicker1Total = new Label(String.format("Amount: %d", Clicker1Amount));
+			clicker1Total.setFont(new Font("Arial", 14));
 			clicker1Total.setTranslateX(625);
 			clicker1Total.setTranslateY(140);
 			clicker1Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker1Total);
 			
 			Label clicker1Price = new Label(String.format("Price: %d", Clicker1Cost));
+			clicker1Price.setFont(new Font("Arial", 14));
 			clicker1Price.setTranslateX(700);
 			clicker1Price.setTranslateY(140);
 			clicker1Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker1Price);
 			
 			Label clicker2Total = new Label(String.format("Amount: %d", Clicker2Amount));
+			clicker2Total.setFont(new Font("Arial", 14));
 			clicker2Total.setTranslateX(625);
 			clicker2Total.setTranslateY(210);
 			clicker2Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker2Total);
 			
 			Label clicker2Price = new Label(String.format("Price: %d", Clicker2Cost));
+			clicker2Price.setFont(new Font("Arial", 14));
 			clicker2Price.setTranslateX(700);
 			clicker2Price.setTranslateY(210);
 			clicker2Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker2Price);
 			
 			Label clicker3Total = new Label(String.format("Amount: %d", Clicker3Amount));
+			clicker3Total.setFont(new Font("Arial", 14));
 			clicker3Total.setTranslateX(625);
 			clicker3Total.setTranslateY(280);
 			clicker3Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker3Total);
 			
 			Label clicker3Price = new Label(String.format("Price: %d", Clicker3Cost));
+			clicker3Price.setFont(new Font("Arial", 14));
 			clicker3Price.setTranslateX(700);
 			clicker3Price.setTranslateY(280);
 			clicker3Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker3Price);
 			
 			Label clicker4Total = new Label(String.format("Amount: %d", Clicker4Amount));
+			clicker4Total.setFont(new Font("Arial", 14));
 			clicker4Total.setTranslateX(625);
 			clicker4Total.setTranslateY(350);
 			clicker4Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker4Total);
 			
 			Label clicker4Price = new Label(String.format("Price: %d", Clicker4Cost));
+			clicker4Price.setFont(new Font("Arial", 14));
 			clicker4Price.setTranslateX(700);
 			clicker4Price.setTranslateY(350);
 			clicker4Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker4Price);
 			
 			Label clicker5Total = new Label(String.format("Amount: %d", Clicker5Amount));
+			clicker5Total.setFont(new Font("Arial", 14));
 			clicker5Total.setTranslateX(635);
 			clicker5Total.setTranslateY(425);
 			clicker5Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker5Total);
 			
 			Label clicker5Price = new Label(String.format("Price: %d", Clicker5Cost));
+			clicker5Price.setFont(new Font("Arial", 14));
 			clicker5Price.setTranslateX(700);
 			clicker5Price.setTranslateY(425);
 			clicker5Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker5Price);
 			
 			Label clicker6Total = new Label(String.format("Amount: %d", Clicker6Amount));
+			clicker6Total.setFont(new Font("Arial", 14));
 			clicker6Total.setTranslateX(625);
 			clicker6Total.setTranslateY(495);
 			clicker6Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker6Total);
 			
 			Label clicker6Price = new Label(String.format("Price: %d", Clicker6Cost));
+			clicker6Price.setFont(new Font("Arial", 14));
 			clicker6Price.setTranslateX(700);
 			clicker6Price.setTranslateY(495);
 			clicker6Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker6Price);
 			
 			Label clicker7Total = new Label(String.format("Amount: %d", Clicker7Amount));
+			clicker7Total.setFont(new Font("Arial", 14));
 			clicker7Total.setTranslateX(625);
 			clicker7Total.setTranslateY(565);
 			clicker7Total.setMaxSize(100, 100);
 			root.getChildren().add(clicker7Total);
 			
 			Label clicker7Price = new Label(String.format("Price: %d", Clicker7Cost));
+			clicker7Price.setFont(new Font("Arial", 14));
 			clicker7Price.setTranslateX(700);
 			clicker7Price.setTranslateY(565);
 			clicker7Total.setMaxSize(100, 100);
