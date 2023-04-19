@@ -26,7 +26,7 @@ public class Main extends Application {
 	//non graphical elements
 	public long startTime = 0;
 	
-	public int totalClicks = 0;
+	public int totalClicks = 999999;
 	
 	public int purchaseAmount = 1;
 	
@@ -516,8 +516,8 @@ public class Main extends Application {
 			//Increase number of clicks per second
 			cpsIncrease.setOnAction(e -> {
 				if (totalClicks >= cpsCost * purchaseAmount) {
-					totalClicks = totalClicks - (cpsCost * purchaseAmount);
-					cpsAmount =+ purchaseAmount;
+					totalClicks -= cpsCost * purchaseAmount;
+					cpsAmount += purchaseAmount;
 					cpsCost = purchaseAmount * (cpsCost * 2);
 					cpsTotal.setText(String.format("Amount: %d", cpsAmount));
 					cpsPrice.setText(String.format("Price: %d", cpsCost));
